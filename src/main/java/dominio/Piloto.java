@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class Piloto {
 	
 	@Id
-	@GeneratedValue
+//	@GeneratedValue
 	@Column(name="id")
 	private String id;
 	
