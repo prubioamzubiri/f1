@@ -12,6 +12,6 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>ServletPilotos</servlet-name>
-  	<url-pattern>/ServletPilotos</url-pattern>
+  	<url-pattern>/pilotos</url-pattern>
   </servlet-mapping>
 </web-app>

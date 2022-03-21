@@ -54,6 +54,16 @@ public class Equipo {
 		
 		pilotos = new ArrayList<Piloto>();
 	}
+	
+	public void setJefe_equipo(Ingeniero jefe)
+	{
+		if(!ingenieros.contains(jefe))
+		{
+			ingenieros.add(jefe);
+		}
+		
+		this.jefe_equipo = jefe;
+	}
 
 
 }

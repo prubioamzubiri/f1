@@ -22,7 +22,7 @@ public class Carrera {
 	
 	private HashMap<Integer, Piloto> pilotos_por_posicion;
 	
-	public Carrera(String nombre_gp, Date fecha_gp, Circuito ciruito, int ano)
+	public Carrera(String nombre_gp, Date fecha_gp, Circuito circuito, int ano)
 	{
 		this.nombre_gp = nombre_gp;
 		this.ano = ano;
