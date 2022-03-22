@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="Pilotos")
+@Table(name="Piloto")
 public class Piloto {
 	
 	@Id
@@ -23,7 +23,7 @@ public class Piloto {
 	private String nombre;
 	
 	@Column(name="ano_nacimiento")
-	private int año_nacimiento;
+	private int ano_nacimiento;
 	
 	@Column(name="numero")
 	private int numero;

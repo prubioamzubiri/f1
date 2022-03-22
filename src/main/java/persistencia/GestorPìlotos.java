@@ -21,7 +21,7 @@ public class GestorPìlotos implements IGestorPilotos {
     @Override
     public List<Piloto> getPilotos() {
         
-        return session.createQuery("SELECT a FROM Student a", Piloto.class).getResultList();   
+        return session.createQuery("from Piloto", Piloto.class).getResultList();   
         
     }
 
@@ -36,7 +36,9 @@ public class GestorPìlotos implements IGestorPilotos {
     @Override
     public void addPiloto(Piloto piloto) {
         
+        session.beginTransaction();
         session.save(piloto);
+        session.getTransaction().commit();
         
     }
 
@@ -44,14 +46,18 @@ public class GestorPìlotos implements IGestorPilotos {
     public void removePiloto(String id) {
        
         Piloto piloto = session.get(Piloto.class, id);
+        session.beginTransaction();
         session.remove(piloto);
+        session.getTransaction().commit();
         
     }
 
     @Override
     public void updatePiloto(Piloto piloto) {
         
+        session.beginTransaction();
         session.update(piloto);
+        session.getTransaction().commit();
         
     }
 
@@ -59,14 +65,18 @@ public class GestorPìlotos implements IGestorPilotos {
     @Override
     public void insertData() {
         
-        Piloto p = new Piloto("p_sv", "Sebastia Vettel", 1987, 5, 2007, 4, "sebastian-vettel-2022.jpg");
+        session.beginTransaction();
+        Piloto p = new Piloto("p_sv", "Sebastia Vettel", 1987, 5, 2007, 4, "sebastian-vettel-2022.png");
         session.save(p);
-        p = new Piloto("p_ls", "Lance Stroll", 1998, 18, 2017 , 0, "lance-stroll-2022.jpg");
+        p = new Piloto("p_ls", "Lance Stroll", 1998, 18, 2017 , 0, "lance-stroll-2022.png");
         session.save(p);
-        p = new Piloto("p_fa", "Fernando Alonso", 1981, 14, 2001, 2, "fernando-alonso-2022.jpg");
+        p = new Piloto("p_fa", "Fernando Alonso", 1981, 14, 2001, 2, "fernando-alonso-2022.png");
         session.save(p);
-        p = new Piloto("p_eo", "Esteban Ocon", 1996, 31, 2016, 0, "esteban-ocon-2022.jpg");
+        p = new Piloto("p_eo", "Esteban Ocon", 1996, 31, 2016, 0, "esteban-ocon-2022.png");
         session.save(p);
+        session.getTransaction().commit();
+
+        
         
     }
 

@@ -1,5 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,8 +27,21 @@
 
   </tr>
 
-  <tr>
 
+  <c:forEach var="p" items="${pilotos}">
+
+    <tr>
+      <td> <img src="${p.foto}" alt=""></td>
+      <td> ${p.nombre} </td>
+      <td> ${p.numero} </td>
+      <td> ${p.mundiales}</td>
+      <td> ${p.ano_nacimiento} </td>
+      <td> ${p.primera_temporada}</td>
+    </tr>
+
+  </c:forEach>
+  
+  <tr>
     <td><img src="fotos/pilotos/fernando-alonso-2022.png" alt=""></td>
     <td>Fernando Alonso</td>
     <td>14</td>
@@ -34,7 +52,7 @@
 
   </tr>
   
-    <tr>
+  <tr>
 
     <td><img src="fotos/pilotos/sebastian-vettel-2022.png" alt=""></td>
     <td>Sebastian Vettel</td>

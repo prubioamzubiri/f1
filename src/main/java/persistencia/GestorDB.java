@@ -5,7 +5,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import dominio.Piloto;
+import lombok.Data;
 
+@Data
 public class GestorDB {
 
     private IGestorPilotos gestorPilotos;
