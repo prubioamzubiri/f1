@@ -56,6 +56,21 @@ public class GestorPìlotos implements IGestorPilotos {
     }
 
 
+    @Override
+    public void insertData() {
+        
+        Piloto p = new Piloto("p_sv", "Sebastia Vettel", 1987, 5, 2007, 4, "sebastian-vettel-2022.jpg");
+        session.save(p);
+        p = new Piloto("p_ls", "Lance Stroll", 1998, 18, 2017 , 0, "lance-stroll-2022.jpg");
+        session.save(p);
+        p = new Piloto("p_fa", "Fernando Alonso", 1981, 14, 2001, 2, "fernando-alonso-2022.jpg");
+        session.save(p);
+        p = new Piloto("p_eo", "Esteban Ocon", 1996, 31, 2016, 0, "esteban-ocon-2022.jpg");
+        session.save(p);
+        
+    }
+
+
 
     
 }

@@ -39,7 +39,7 @@ public class Piloto {
 
 	public String getFoto()
 	{
-		return "/fotos/pilotos/" + foto;
+		return "fotos/pilotos/" + foto;
 	}
 	
 

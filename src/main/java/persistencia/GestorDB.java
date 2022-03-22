@@ -33,25 +33,15 @@ public class GestorDB {
         Configuration cfg = new Configuration();
 
         String connectionURL;
-
-        // -Ddbhost=host -Ddbport=port -Ddbdatabase=databasename
-        // String host = (System.getProperty("dbhost")==null)? "127.0.0.1":System.getProperty(data);
-        //   String host = getProperty("dbhost", "127.0.0.1");
-        //   String port = getProperty("dbport","3306");
-        //   String database = getProperty("dbdatabase","database1");
     
-          connectionURL = "jdbc:h2:mem:default";//; DB_CLOSE_ON_EXIT=FALSE"; //"jdbc:mysql://" + host + ":" + port + "/" + database;
+          connectionURL = "jdbc:h2:mem:default";
           cfg.setProperty("hibernate.connection.url", connectionURL);
     
           cfg.setProperty("hibernate.connection.driver_class","org.h2.Driver");
           cfg.setProperty("hibernate.dialect","org.hibernate.dialect.H2Dialect");
     
-          // -Ddbuser=user
-          //String user = getProperty("dbuser", "root");
           cfg.setProperty("hibernate.connection.username", "sa");
     
-          //-Ddbpassword=password
-          //String password = getProperty("dbpassword","root");
           cfg.setProperty("hibernate.connection.password", "sa");
 
           return cfg;
@@ -62,5 +52,10 @@ public class GestorDB {
     public void close()
     {
         this.session.close();
+    }
+
+    public void insertData()
+    {
+
     }
 }

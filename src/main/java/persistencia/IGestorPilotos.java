@@ -17,4 +17,6 @@ public interface IGestorPilotos {
 	
 	public void updatePiloto(Piloto piloto);
 
+	public void insertData();
+
 }

@@ -2,8 +2,6 @@ package dominio;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Set;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
