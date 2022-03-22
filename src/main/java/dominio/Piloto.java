@@ -33,10 +33,15 @@ public class Piloto {
 	
 	@Column(name="mundiales")
 	private int mundiales;
-	
-	public String getFotoPiloto()
+
+	@Column(name="foto")
+	private String foto;
+
+	public String getFoto()
 	{
-		return "fotos/piloto/" + this.id;
+		return "/fotos/pilotos/" + foto;
 	}
+	
+
 
 }

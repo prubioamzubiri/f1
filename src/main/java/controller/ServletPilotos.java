@@ -27,7 +27,7 @@ public class ServletPilotos extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		RequestDispatcher rd = request.getRequestDispatcher("pilotos.jsp");		
+		RequestDispatcher rd = request.getRequestDispatcher("lista-pilotos.jsp");		
 		rd.forward(request, response);
 		
 	}
