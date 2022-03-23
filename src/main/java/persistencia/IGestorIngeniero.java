@@ -1,5 +1,9 @@
 package persistencia;
 
+import java.util.List;
+
+import dominio.Ingeniero;
+
 public interface IGestorIngeniero {
 
     public List<Ingeniero> getIngenieros();

@@ -1,5 +1,9 @@
 package persistencia;
 
+import java.util.List;
+
+import dominio.Equipo;
+
 public interface IGestorEquipos {
 
     public List<Equipo> getEquipos();

@@ -16,8 +16,24 @@ version="2.4">
   	<description></description>
   	<servlet-class>controller.ServletPilotos</servlet-class>
   </servlet>
+
+  <servlet>
+	<servlet-name>ServletInsertData</servlet-name>
+	<display-name>ServletInsertData</display-name>
+	<description></description>
+	<servlet-class>controller.ServletInsertData</servlet-class>
+</servlet>
+
+
   <servlet-mapping>
   	<servlet-name>ServletPilotos</servlet-name>
   	<url-pattern>/pilotos</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+	<servlet-name>ServletInsertData</servlet-name>
+	<url-pattern>/insertData</url-pattern>
+</servlet-mapping>
+
+
 </web-app>

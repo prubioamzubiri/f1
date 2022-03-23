@@ -1,6 +1,6 @@
 package dominio;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
