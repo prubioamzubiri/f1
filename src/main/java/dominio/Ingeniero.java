@@ -16,8 +16,10 @@ public class Ingeniero {
 	@Id
 	private String id;
 
+	@Column(name="nombre")
 	private String nombre;
 	
+	@Column(name="ano_nacimiento")
 	private int ano_nacimiento;
 
 }

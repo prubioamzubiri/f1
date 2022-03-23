@@ -116,6 +116,9 @@
           <artifactId>cargo-maven2-plugin</artifactId>
           <version>1.7.6</version>
           <configuration>
+            <properties>
+              <cargo.servlet.port>8080</cargo.servlet.port>
+            </properties>
             <container>
               <containerId>tomcat9x</containerId>
               <type>embedded</type>
