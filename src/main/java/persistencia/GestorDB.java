@@ -60,6 +60,6 @@ public class GestorDB {
 
     public void insertData()
     {
-
+        this.gestorPilotos.insertData();
     }
 }

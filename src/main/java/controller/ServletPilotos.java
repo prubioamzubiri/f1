@@ -63,10 +63,8 @@ public class ServletPilotos extends HttpServlet {
 	public void init() throws ServletException {
 
 		super.init();
-		gbd.getGestorPilotos().insertData();
-		
-
-		
+		//gbd.getGestorPilotos().insertData();
+				
 	}
 
 }

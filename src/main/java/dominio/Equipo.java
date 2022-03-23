@@ -2,24 +2,37 @@ package dominio;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-
+@Entity
+@Table(name="Equipo")
 public class Equipo {
 	
+	@Id
+	private String id;
+
+
 	private String nombre_equipo;
-	
-	private int primer_ano;
-	
+
 	private int mundiales_de_constructores;
 	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "Equipo_id")
 	private ArrayList<Piloto> pilotos;
 	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "Equipo_id")
 	private ArrayList<Ingeniero> ingenieros;
 	
+	@OneToOne(mappedBy = "Equipo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 	private Ingeniero jefe_equipo;
 	
 	public Equipo(String nombre_equipo, int primer_ano, int mundiales_de_constructores)
