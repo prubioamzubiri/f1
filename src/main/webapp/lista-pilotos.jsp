@@ -1,5 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,30 +24,25 @@
     <td>Año de nacimiento</td>   
     <td>Año de debut</td>    
 
-
   </tr>
-
+  
   <tr>
-
-    <td><img src="fotos/pilotos/fernando-alonso-2022.png" alt=""></td>
+    <td><img src="fotos/pilotos/fernando-alonso-2022.png" alt="" width="80" height="80"></td>
     <td>Fernando Alonso</td>
     <td>14</td>
     <td>2</td>
     <td>1981</td>
     <td>2001</td>
-
-
   </tr>
   
-    <tr>
+  <tr>
 
-    <td><img src="fotos/pilotos/sebastian-vettel-2022.png" alt=""></td>
+    <td><img src="fotos/pilotos/sebastian-vettel-2022.png" alt="" width="80" height="80"></td>
     <td>Sebastian Vettel</td>
     <td>5</td>
     <td>4</td>
     <td>1987</td>
     <td>2007</td>
-
 
   </tr>
 

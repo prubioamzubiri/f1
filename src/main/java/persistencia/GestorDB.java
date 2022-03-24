@@ -4,11 +4,15 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import dominio.Ingeniero;
 import dominio.Piloto;
+import lombok.Data;
 
+@Data
 public class GestorDB {
 
     private IGestorPilotos gestorPilotos;
+    private IGestorIngeniero gestorIngeniero;
     private Session session;
     
     public GestorDB()
@@ -16,13 +20,14 @@ public class GestorDB {
        
         Configuration cfg = this.connection();
 
-        cfg.configure().addAnnotatedClass(Piloto.class);
+        cfg.configure().addAnnotatedClass(Piloto.class).addAnnotatedClass(Ingeniero.class);
 
         SessionFactory factory = cfg.buildSessionFactory();
 
         this.session = factory.openSession();
 
         gestorPilotos = new GestorPìlotos(session);
+        gestorIngeniero = new GestorIngenieros(session);
 
 
     }
@@ -34,15 +39,17 @@ public class GestorDB {
 
         String connectionURL;
     
-          connectionURL = "jdbc:h2:mem:default";
+
+          connectionURL = "jdbc:mysql://127.0.0.1:3306/f1";
           cfg.setProperty("hibernate.connection.url", connectionURL);
     
-          cfg.setProperty("hibernate.connection.driver_class","org.h2.Driver");
-          cfg.setProperty("hibernate.dialect","org.hibernate.dialect.H2Dialect");
+         
+          cfg.setProperty("hibernate.connection.driver_class","com.mysql.cj.jdbc.Driver");
+          cfg.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL8Dialect");
     
-          cfg.setProperty("hibernate.connection.username", "sa");
+          cfg.setProperty("hibernate.connection.username", "root");
     
-          cfg.setProperty("hibernate.connection.password", "sa");
+          cfg.setProperty("hibernate.connection.password", "root");
 
           return cfg;
 
@@ -56,6 +63,7 @@ public class GestorDB {
 
     public void insertData()
     {
-
+        this.gestorPilotos.insertData();        
+        this.gestorIngeniero.insertData();
     }
 }
