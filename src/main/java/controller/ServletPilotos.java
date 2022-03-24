@@ -18,14 +18,12 @@ import persistencia.GestorDB;
 public class ServletPilotos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private GestorDB gbd;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public ServletPilotos() {
         super();
-		gbd = new GestorDB();
 
         // TODO Auto-generated constructor stub
     }
@@ -37,11 +35,6 @@ public class ServletPilotos extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<Piloto> listaPilotos = gbd.getGestorPilotos().getPilotos();
-
-		
-
-		request.setAttribute("pilotos", listaPilotos);
 
 		RequestDispatcher rd = request.getRequestDispatcher("lista-pilotos.jsp");
 
