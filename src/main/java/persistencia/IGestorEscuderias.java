@@ -10,11 +10,11 @@ public interface IGestorEscuderias {
 
     public Escuderia getEscuderia(String id);
 
-    public void addEscuderia(Escuderia Escuderia);
+    public void addEscuderia(Escuderia escuderia);
 
     public void removeEscuderia(String id);
 
-    public void updateEscuderia(Escuderia Escuderia);
+    public void updateEscuderia(Escuderia escuderia);
 
     public void insertData();
     

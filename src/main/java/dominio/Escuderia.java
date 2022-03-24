@@ -31,22 +31,27 @@ public class Escuderia {
 	
 	@OneToOne(mappedBy = "Escuderia", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 	private Ingeniero jefe_escuderia;
+
+	private String foto;
 	
-	public Escuderia(String nombre_escuderia,  int mundiales_de_constructores)
+	public Escuderia(String id, String nombre_escuderia,  int mundiales_de_constructores, String foto)
 	{
+		this.id = id;
 		this.nombre_escuderia = nombre_escuderia;
 		this.mundiales_de_constructores = mundiales_de_constructores;
+		this.foto = foto;
 		
 		ingenieros = new ArrayList<Ingeniero>();
 		
 		pilotos = new ArrayList<Piloto>();
 	}
 	
-	public Escuderia(String nombre_escuderia,  int mundiales_de_constructores, Ingeniero jefe_escuderia)
+	public Escuderia(String nombre_escuderia,  int mundiales_de_constructores, Ingeniero jefe_escuderia, String foto)
 	{
 		this.nombre_escuderia = nombre_escuderia;
 		this.mundiales_de_constructores = mundiales_de_constructores;
 		this.jefe_escuderia = jefe_escuderia;
+		this.foto = foto;
 		
 		ingenieros = new ArrayList<Ingeniero>();
 		
@@ -71,6 +76,21 @@ public class Escuderia {
 		}
 		
 		this.jefe_escuderia= jefe;
+	}
+
+	public void addIngeniero(Ingeniero i)
+	{
+		this.ingenieros.add(i);
+	}
+
+	public void addPiloto(Piloto p)
+	{
+		this.pilotos.add(p);
+	}
+
+	public String getFoto()
+	{
+		return "fotos/escuderias/"+ foto;
 	}
 
 
