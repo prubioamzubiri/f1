@@ -72,8 +72,8 @@ public class GestorEscuderias implements IGestorEscuderias{
         //Alpine
         //*************** */
 
-        ArrayList<Piloto> listaPilotosAlpine = new ArrayList<Piloto>();
-        ArrayList<Ingeniero> listaIngenierosAlpine = new ArrayList<Ingeniero>();
+        List<Piloto> listaPilotosAlpine = new ArrayList<Piloto>();
+        List<Ingeniero> listaIngenierosAlpine = new ArrayList<Ingeniero>();
 
         Piloto p = session.get(Piloto.class, "p_fa");     
         listaPilotosAlpine.add(p);
@@ -94,8 +94,8 @@ public class GestorEscuderias implements IGestorEscuderias{
         //Aston Martin
         //*************** */
 
-        ArrayList<Piloto> listaPilotosAston = new ArrayList<Piloto>();
-        ArrayList<Ingeniero> listaIngenierosAston = new ArrayList<Ingeniero>();
+        List<Piloto> listaPilotosAston = new ArrayList<Piloto>();
+        List<Ingeniero> listaIngenierosAston = new ArrayList<Ingeniero>();
 
         p = session.get(Piloto.class, "p_sv");     
         listaPilotosAston.add(p);
