@@ -12,7 +12,7 @@ public class Temporada {
 	
 	private int ano;
 	
-	private ArrayList<Equipo> equipos;
+	private ArrayList<Escuderia> escuderias;
 	
 	private ArrayList<Carrera> carreras;
 	
@@ -20,14 +20,14 @@ public class Temporada {
 	{
 		this.ano = ano;
 		
-		equipos = new ArrayList<Equipo>();
+		escuderias = new ArrayList<Escuderia>();
 		
 		carreras = new ArrayList<Carrera>();
 	}
 	
 	public Temporada()
 	{
-		equipos = new ArrayList<Equipo>();
+		escuderias = new ArrayList<Escuderia>();
 		
 		carreras = new ArrayList<Carrera>();
 	}

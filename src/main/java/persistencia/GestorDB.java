@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import dominio.Ingeniero;
 import dominio.Piloto;
 import lombok.Data;
 
@@ -11,6 +12,7 @@ import lombok.Data;
 public class GestorDB {
 
     private IGestorPilotos gestorPilotos;
+    private IGestorIngeniero gestorIngeniero;
     private Session session;
     
     public GestorDB()
@@ -18,13 +20,14 @@ public class GestorDB {
        
         Configuration cfg = this.connection();
 
-        cfg.configure().addAnnotatedClass(Piloto.class);
+        cfg.configure().addAnnotatedClass(Piloto.class).addAnnotatedClass(Ingeniero.class);
 
         SessionFactory factory = cfg.buildSessionFactory();
 
         this.session = factory.openSession();
 
         gestorPilotos = new GestorPìlotos(session);
+        gestorIngeniero = new GestorIngenieros(session);
 
 
     }
@@ -60,6 +63,7 @@ public class GestorDB {
 
     public void insertData()
     {
-        this.gestorPilotos.insertData();
+        this.gestorPilotos.insertData();        
+        this.gestorIngeniero.insertData();
     }
 }

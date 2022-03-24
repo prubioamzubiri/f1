@@ -24,7 +24,6 @@
     <td>Año de nacimiento</td>   
     <td>Año de debut</td>    
 
-
   </tr>
 
 

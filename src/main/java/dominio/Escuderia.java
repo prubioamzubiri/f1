@@ -10,31 +10,31 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Entity
-@Table(name="Equipo")
-public class Equipo {
+@Table(name="Escuderia")
+public class Escuderia {
 	
 	@Id
 	private String id;
 
 
-	private String nombre_equipo;
+	private String nombre_escuderia;
 
 	private int mundiales_de_constructores;
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "Equipo_id")
+    @JoinColumn(name = "Escuderia_id")
 	private ArrayList<Piloto> pilotos;
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "Equipo_id")
+    @JoinColumn(name = "Escuderia_id")
 	private ArrayList<Ingeniero> ingenieros;
 	
-	@OneToOne(mappedBy = "Equipo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-	private Ingeniero jefe_equipo;
+	@OneToOne(mappedBy = "Escuderia", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+	private Ingeniero jefe_escuderia;
 	
-	public Equipo(String nombre_equipo,  int mundiales_de_constructores)
+	public Escuderia(String nombre_escuderia,  int mundiales_de_constructores)
 	{
-		this.nombre_equipo = nombre_equipo;
+		this.nombre_escuderia = nombre_escuderia;
 		this.mundiales_de_constructores = mundiales_de_constructores;
 		
 		ingenieros = new ArrayList<Ingeniero>();
@@ -42,20 +42,20 @@ public class Equipo {
 		pilotos = new ArrayList<Piloto>();
 	}
 	
-	public Equipo(String nombre_equipo,  int mundiales_de_constructores, Ingeniero jefe_de_equipo)
+	public Escuderia(String nombre_escuderia,  int mundiales_de_constructores, Ingeniero jefe_escuderia)
 	{
-		this.nombre_equipo = nombre_equipo;
+		this.nombre_escuderia = nombre_escuderia;
 		this.mundiales_de_constructores = mundiales_de_constructores;
-		this.jefe_equipo = jefe_de_equipo;
+		this.jefe_escuderia = jefe_escuderia;
 		
 		ingenieros = new ArrayList<Ingeniero>();
 		
-		ingenieros.add(jefe_de_equipo);
+		ingenieros.add(jefe_escuderia);
 		
 		pilotos = new ArrayList<Piloto>();
 	}
 	
-	public Equipo()
+	public Escuderia()
 	{
 		
 		ingenieros = new ArrayList<Ingeniero>();
@@ -63,14 +63,14 @@ public class Equipo {
 		pilotos = new ArrayList<Piloto>();
 	}
 	
-	public void setJefe_equipo(Ingeniero jefe)
+	public void setJefe_escuderia(Ingeniero jefe)
 	{
 		if(!ingenieros.contains(jefe))
 		{
 			ingenieros.add(jefe);
 		}
 		
-		this.jefe_equipo = jefe;
+		this.jefe_escuderia= jefe;
 	}
 
 

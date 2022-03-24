@@ -74,8 +74,7 @@ public class GestorPìlotos implements IGestorPilotos {
         session.save(p);
         session.getTransaction().commit();
 
-        
-        
+            
     }
 
 
