@@ -9,7 +9,7 @@ import dominio.Escuderia;
 import dominio.Ingeniero;
 import dominio.Piloto;
 
-public class GestorEscuderias implements IGestorEscuderias{
+public class GestorEscuderias implements IGestorDBClase<Escuderia>{
 
     Session session;
 
@@ -20,14 +20,14 @@ public class GestorEscuderias implements IGestorEscuderias{
     
 
     @Override
-    public List<Escuderia> getEscuderias() {
+    public List<Escuderia> getElements() {
         
         return session.createQuery("from Escuderia", Escuderia.class).getResultList();
 
     }
 
     @Override
-    public Escuderia getEscuderia(String id) {
+    public Escuderia getElement(String id) {
 
         Escuderia toReturn = session.get(Escuderia.class, id);
 
@@ -36,7 +36,7 @@ public class GestorEscuderias implements IGestorEscuderias{
     }
 
     @Override
-    public void addEscuderia(Escuderia escuderia) {
+    public void addElement(Escuderia escuderia) {
 
         session.beginTransaction();
         session.save(escuderia);
@@ -45,7 +45,7 @@ public class GestorEscuderias implements IGestorEscuderias{
     }
 
     @Override
-    public void removeEscuderia(String id) {
+    public void removeElement(String id) {
         
         Escuderia escuderia = session.get(Escuderia.class, id);
         session.beginTransaction();
@@ -55,7 +55,7 @@ public class GestorEscuderias implements IGestorEscuderias{
     }
 
     @Override
-    public void updateEscuderia(Escuderia escuderia) {
+    public void updateElement(Escuderia escuderia) {
 
         session.beginTransaction();
         session.update(escuderia);

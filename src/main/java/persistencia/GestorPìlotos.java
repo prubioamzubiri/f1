@@ -6,7 +6,7 @@ import org.hibernate.Session;
 
 import dominio.Piloto;
 
-public class GestorPìlotos implements IGestorPilotos {
+public class GestorPìlotos implements IGestorDBClase<Piloto> {
 
     Session session;
 
@@ -17,14 +17,14 @@ public class GestorPìlotos implements IGestorPilotos {
 
 
     @Override
-    public List<Piloto> getPilotos() {
+    public List<Piloto> getElements() {
         
         return session.createQuery("from Piloto", Piloto.class).getResultList();   
         
     }
 
     @Override
-    public Piloto getPiloto(String id) {
+    public Piloto getElement(String id) {
         
         Piloto toReturn = session.get(Piloto.class, id);
 
@@ -32,7 +32,7 @@ public class GestorPìlotos implements IGestorPilotos {
     }
 
     @Override
-    public void addPiloto(Piloto piloto) {
+    public void addElement(Piloto piloto) {
         
         session.beginTransaction();
         session.save(piloto);
@@ -41,7 +41,7 @@ public class GestorPìlotos implements IGestorPilotos {
     }
 
     @Override
-    public void removePiloto(String id) {
+    public void removeElement(String id) {
        
         Piloto piloto = session.get(Piloto.class, id);
         session.beginTransaction();
@@ -51,7 +51,7 @@ public class GestorPìlotos implements IGestorPilotos {
     }
 
     @Override
-    public void updatePiloto(Piloto piloto) {
+    public void updateElement(Piloto piloto) {
         
         session.beginTransaction();
         session.update(piloto);
