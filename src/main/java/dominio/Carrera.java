@@ -10,6 +10,7 @@ import lombok.Data;
 
 public class Carrera {
 	
+
 	private String nombre_gp;
 
 	private Circuito circuito;

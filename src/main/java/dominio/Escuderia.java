@@ -1,6 +1,7 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -23,13 +24,15 @@ public class Escuderia {
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "Escuderia_id")
-	private ArrayList<Piloto> pilotos;
+	private List<Piloto> pilotos;
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "Escuderia_id")
-	private ArrayList<Ingeniero> ingenieros;
+	private List<Ingeniero> ingenieros;
 	
-	@OneToOne(mappedBy = "Escuderia", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+	//@OneToOne(mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+	@OneToOne
+    @JoinColumn(name = "id")
 	private Ingeniero jefe_escuderia;
 
 	private String foto;
