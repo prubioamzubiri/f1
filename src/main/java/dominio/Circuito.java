@@ -18,6 +18,7 @@ public class Circuito {
 
 	private String pais;
 	
+	//En metros
 	private String nombre_circuito;
 	
 	private int distancia;
