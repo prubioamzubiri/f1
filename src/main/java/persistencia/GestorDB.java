@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import dominio.Carrera;
 import dominio.Circuito;
 import dominio.Escuderia;
 import dominio.Ingeniero;
@@ -17,6 +18,7 @@ public class GestorDB {
     private IGestorIngeniero gestorIngeniero;
     private IGestorEscuderias gestorEscuderia;
     private IGestorDBClase<Circuito> gestorCircuito;
+    private IGestorDBClase<Carrera> gestorCarrera;
     private Session session;
     
     public GestorDB()
@@ -27,7 +29,8 @@ public class GestorDB {
         cfg.configure().addAnnotatedClass(Piloto.class)
                     .addAnnotatedClass(Ingeniero.class)
                     .addAnnotatedClass(Escuderia.class)
-                    .addAnnotatedClass(Circuito.class);
+                    .addAnnotatedClass(Circuito.class)
+                    .addAnnotatedClass(Carrera.class);
 
         SessionFactory factory = cfg.buildSessionFactory();
 
@@ -37,6 +40,7 @@ public class GestorDB {
         gestorIngeniero = new GestorIngenieros(session);
         gestorEscuderia = new GestorEscuderias(session);
         gestorCircuito = new GestorCircuito(session);
+        gestorCarrera = new GestorCarrera(session);
 
 
     }
@@ -76,5 +80,6 @@ public class GestorDB {
         this.gestorIngeniero.insertData();
         this.gestorEscuderia.insertData();
         this.gestorCircuito.insertData();
+        this.gestorCarrera.insertData();
     }
 }
