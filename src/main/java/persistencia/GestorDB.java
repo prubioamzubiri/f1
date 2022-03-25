@@ -9,6 +9,7 @@ import dominio.Circuito;
 import dominio.Escuderia;
 import dominio.Ingeniero;
 import dominio.Piloto;
+import dominio.Temporada;
 import lombok.Data;
 
 @Data
@@ -19,6 +20,7 @@ public class GestorDB {
     private IGestorEscuderias gestorEscuderia;
     private IGestorDBClase<Circuito> gestorCircuito;
     private IGestorDBClase<Carrera> gestorCarrera;
+    private IGestorDBClase<Temporada> gestorTemporada;
     private Session session;
     
     public GestorDB()
@@ -30,7 +32,8 @@ public class GestorDB {
                     .addAnnotatedClass(Ingeniero.class)
                     .addAnnotatedClass(Escuderia.class)
                     .addAnnotatedClass(Circuito.class)
-                    .addAnnotatedClass(Carrera.class);
+                    .addAnnotatedClass(Carrera.class)
+                    .addAnnotatedClass(Temporada.class);
 
         SessionFactory factory = cfg.buildSessionFactory();
 
@@ -41,6 +44,7 @@ public class GestorDB {
         gestorEscuderia = new GestorEscuderias(session);
         gestorCircuito = new GestorCircuito(session);
         gestorCarrera = new GestorCarrera(session);
+        gestorTemporada = new GestorTemporadas(session);
 
 
     }
@@ -81,5 +85,6 @@ public class GestorDB {
         this.gestorEscuderia.insertData();
         this.gestorCircuito.insertData();
         this.gestorCarrera.insertData();
+        this.gestorTemporada.insertData();
     }
 }
