@@ -15,9 +15,9 @@ import lombok.Data;
 @Data
 public class GestorDB {
 
-    private IGestorPilotos gestorPilotos;
-    private IGestorIngeniero gestorIngeniero;
-    private IGestorEscuderias gestorEscuderia;
+    private IGestorDBClase<Piloto> gestorPilotos;
+    private IGestorDBClase<Ingeniero> gestorIngeniero;
+    private IGestorDBClase<Escuderia> gestorEscuderia;
     private IGestorDBClase<Circuito> gestorCircuito;
     private IGestorDBClase<Carrera> gestorCarrera;
     private IGestorDBClase<Temporada> gestorTemporada;

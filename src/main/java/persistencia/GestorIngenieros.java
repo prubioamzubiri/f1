@@ -6,7 +6,7 @@ import org.hibernate.Session;
 
 import dominio.Ingeniero;
 
-public class GestorIngenieros implements IGestorIngeniero{
+public class GestorIngenieros implements IGestorDBClase<Ingeniero>{
 
     Session session;
 
@@ -16,14 +16,14 @@ public class GestorIngenieros implements IGestorIngeniero{
     }
 
     @Override
-    public List<Ingeniero> getIngenieros() {
+    public List<Ingeniero> getElements() {
     
         return session.createQuery("from Ingeniero", Ingeniero.class).getResultList(); 
 
     }
 
     @Override
-    public Ingeniero getIngeniero(String id) {
+    public Ingeniero getElement(String id) {
  
         Ingeniero toReturn = session.get(Ingeniero.class, id);
 
@@ -32,7 +32,7 @@ public class GestorIngenieros implements IGestorIngeniero{
     }
 
     @Override
-    public void addIngeniero(Ingeniero ingeniero) {
+    public void addElement(Ingeniero ingeniero) {
         
         session.beginTransaction();
         session.save(ingeniero);
@@ -41,7 +41,7 @@ public class GestorIngenieros implements IGestorIngeniero{
     }
 
     @Override
-    public void removeIngeniero(String id) {
+    public void removeElement(String id) {
         
         Ingeniero ingeniero = session.get(Ingeniero.class, id);
         session.beginTransaction();
@@ -51,7 +51,7 @@ public class GestorIngenieros implements IGestorIngeniero{
     }
 
     @Override
-    public void updateIngeniero(Ingeniero ingeniero) {
+    public void updateElement(Ingeniero ingeniero) {
         
         session.beginTransaction();
         session.update(ingeniero);
@@ -78,3 +78,4 @@ public class GestorIngenieros implements IGestorIngeniero{
 
     
 }
+

@@ -26,8 +26,6 @@ public class Carrera {
 	
 	private Date fecha_gp;
 	
-	private int ano;
-	
 	@ElementCollection
     @CollectionTable(name = "posicion_en_carrera", 
       joinColumns = {@JoinColumn(name = "posicion_id", referencedColumnName = "id")})
@@ -35,10 +33,9 @@ public class Carrera {
     @Column(name = "piloto")
 	private Map<Integer, Piloto> pilotos_por_posicion;
 	
-	public Carrera(String nombre_gp, Date fecha_gp, Circuito circuito, int ano)
+	public Carrera(String nombre_gp, Date fecha_gp, Circuito circuito)
 	{
 		this.nombre_gp = nombre_gp;
-		this.ano = ano;
 		this.fecha_gp = fecha_gp;
 		this.circuito = circuito;
 		
