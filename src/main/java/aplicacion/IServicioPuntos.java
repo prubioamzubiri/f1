@@ -17,6 +17,6 @@ public interface IServicioPuntos {
 
     public Map<Integer,Piloto> getClasificacionPiloto(int ano);
 
-    public Map<Integer, Escuderia> getClasificacionescuderia(int ano);
+    public Map<Integer, Escuderia> getClasificacionEscuderia(int ano);
     
 }

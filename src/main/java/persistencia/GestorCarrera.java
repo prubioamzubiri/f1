@@ -93,7 +93,7 @@ public class GestorCarrera implements IGestorDBClase<Carrera>{
         pil_pos.put(3,eo);
         pil_pos.put(4,ls);
 
-        Carrera car = new Carrera("car_bar_2022", "Gran Premio de Baréin", c, date, 2022, pil_pos);
+        Carrera car = new Carrera("car_bar_2022", "Gran Premio de Baréin", c, date, pil_pos);
 
         session.save(car);
 
